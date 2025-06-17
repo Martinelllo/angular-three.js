@@ -1,0 +1,93 @@
+/* styles.scss oder styles.css */
+html, body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// Oberfläche
+.hud {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+
+  // Interaktive Elemente erlauben
+  button, a {
+    pointer-events: auto;
+  }
+}
+
+.view {
+  position: absolute;
+}
+
+// basic blocks
+.margin {
+  margin: 10px;
+}
+
+.padding {
+  padding: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-items: center;
+}
+
+.gap {
+  gap: 10px;
+}
+
+// theme
+:root {
+  --element-color: #3498db;
+  --element-height: 40px;
+  --element-padding: 20px;
+}
+
+.element {
+  padding: var(--element-padding);
+  height: var(--element-height);
+  border-radius: 10px;
+  border: solid 2px var(--element-color);
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--element-color);
+}
+
+.button {
+  padding: var(--element-padding);
+  height: var(--element-height);
+  border-radius: 10px;
+  border: solid 4px gray;
+  display: inline-flex;
+  align-items: center;
+  font-size: 20px;
+  transition: all 150ms cubic-bezier(0, 0, 0.80, 1);
+  &:hover {
+    box-shadow: 1px 1px 4px 4px #353434; // roter Ring mit 4px Dicke
+    transform: scale(1.1)
+  }
+  &:active {
+    box-shadow: 1px 1px 6px 6px #353434; // roter Ring mit 4px Dicke
+    border: solid 5px gray;
+    transform: scale(1) translateX(-1px) !important;
+    transition: all 10ms cubic-bezier(0, 0, 0.80, 1);
+  }
+}
