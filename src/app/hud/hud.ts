@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ControlService } from '../services/control-service';
 
 @Component({
   selector: 'app-hud',
@@ -8,7 +7,18 @@ import { ControlService } from '../services/control-service';
   styleUrl: './hud.scss'
 })
 export class Hud {
+
+  counter = 0;
+
   constructor(
-    public controlService: ControlService,
   ) { }
+
+  click() {
+    if(this.counter >= 10) {
+      alert('Cool geklickt!');
+      this.counter = 0;
+      return;
+    }
+    this.counter++;
+  }
 }
